@@ -1,3 +1,5 @@
+import hashlib
+
 def percentages():
     #Number of students
     n = int(input())
@@ -42,7 +44,17 @@ def printHacherRankLogo():
 
     for i in range(thickness):  print(((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
     
+def tuplesAndHashTable():
+    print('Hola, soy el de las hash tables con tuples ;)')
+    #La N no nos sirve de nada, pero hacker rank la pedia xd ;-;
+    n = int(input())
+
+    Tuple1 = map(int, input().split())
+
+    t = tuple(Tuple1)
+
+    print(hash(t))
 
     
 if __name__ == '__main__':
-    print('hi')
+    tuplesAndHashTable()

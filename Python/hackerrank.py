@@ -1,5 +1,3 @@
-import hashlib
-
 def percentages():
     #Number of students
     n = int(input())

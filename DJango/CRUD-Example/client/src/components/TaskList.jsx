@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllTasks } from '../api/tasks.api'
+import { TaskCard } from "./TaskContainer";
 
 export  function TaskList() {
 
@@ -20,10 +21,7 @@ export  function TaskList() {
   return (
     <div>
         {tasks.map( tasks => (
-            <div key={tasks.id}>
-                <h1>{tasks.tittle}</h1>
-                <p>{tasks.description}</p>
-            </div>
+            <TaskCard key = {tasks.id}  tasks = {tasks}/>
         ))}
     </div>
   )

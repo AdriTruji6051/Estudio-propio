@@ -10,7 +10,10 @@ export const getAllTasks = () => {
 // export const createTasks = (tasks) =>{
 //     return tasksAPI.post('/', tasks)
 // }
+export const getTask = (id) => tasksAPI.get('/' + id + '/')
 
 export const createTasks = (tasks) => tasksAPI.post('/', tasks); //----------------- Otra forma de escribirlo al solo trabajar una linea y devolver un valor
 
 export const deleteTasks = (id) => tasksAPI.delete('/' + id);
+
+export const updateTasks = (id, tasks) => tasksAPI.put('/' + id + '/', tasks )

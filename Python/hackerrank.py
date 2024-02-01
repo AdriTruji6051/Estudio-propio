@@ -53,6 +53,30 @@ def tuplesAndHashTable():
 
     print(hash(t))
 
-    
+def swap_case(s):
+    c = ''
+    for a in range(len(s)):
+        if(s[a].islower()): c += str(s[a].upper())
+        elif(s[a].isupper): c += str(s[a].lower())
+        else: c += s[a]
+    return c
+
+def split_and_join(line):
+    line = line.split(" ")
+    line = "-".join(line)
+    return line
+
+def print_full_name(first, last):
+    print(f'Hello {first} {last}! You just delved into python.')
+
+def mutate_string(string, position, character):
+    string = list(string)
+    string[position] = character
+    return "".join(string)
+
 if __name__ == '__main__':
-    tuplesAndHashTable()
+    print('Hola: ')
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)

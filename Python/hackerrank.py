@@ -74,9 +74,62 @@ def mutate_string(string, position, character):
     string[position] = character
     return "".join(string)
 
+#Las dos funciones son del mismo ejercicio
+def count_substring(string, sub_string):
+    timesInString = 0
+    for char in range(len(string)):
+        if string[char] == sub_string[0]:
+            timesInString += isSubStringIn(string[char:char + len(sub_string)], sub_string)
+    return timesInString
+
+def isSubStringIn(string, sub_string):
+    if string == sub_string: return 1
+    else: return 0
+
+import textwrap
+def wrap(string, max_width):
+    return textwrap.fill(string, max_width)
+
+def designerDoor():
+    n, m = map(int,input().split())
+    for i in range(n//2):
+        j = int((2*i)+1)
+        print(('.|.'*j).center(m, '-'))
+    print('WELCOME'.center(m,'-'))
+    for i in reversed(range(n//2)):
+        j = int((2*i)+1)
+        print(('.|.'*j).center(m, '-'))
+        
+def print_formatted(number):
+    width = len(bin(number)[2:])
+    for i in range(1, number+1):
+        deci = str(i)
+        octa = oct(i)[2:]
+        hexa = hex(i)[2:].upper()
+        bina = bin(i)[2:]
+        print(deci.rjust(width),octa.rjust(width),hexa.rjust(width),bina.rjust(width))
+
+def print_rangoli(size):
+    alphebeth = 'abcdefghijklmnopqrstuvwxyz'
+    width = size + size -1
+    chars = alphebeth[:size]
+    for i in range(size -1):
+        width += 2 
+
+    for i in range(size-1,-1,-1):
+        line = chars[i:]
+        result = line[::-1] + line[1:]
+        result = '-'.join(result)
+        space = '-' * int((width - len(result)) / 2)
+        print(space + result + space)
+        width - 2
+    for i in range(1,size,1):
+        line = chars[i:]
+        result = line[::-1] + line[1:]
+        result = '-'.join(result)
+        space = '-' * int((width - len(result)) / 2)
+        print(space + result + space)
+    
+
 if __name__ == '__main__':
-    print('Hola: ')
-    s = input()
-    i, c = input().split()
-    s_new = mutate_string(s, int(i), c)
-    print(s_new)
+    print_rangoli(10)

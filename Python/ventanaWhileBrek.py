@@ -51,7 +51,7 @@ while True:
     
     if caracol1.xcor() >= meta or caracol2.xcor() >= meta:
         break
-    
+   
 
 if caracol1.xcor() > caracol2.xcor():
     print("El caracol rojo ha ganado")

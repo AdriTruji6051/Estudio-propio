@@ -7,4 +7,3 @@ from .models import Tasks
 class TasksView(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     queryset = Tasks.objects.all()
-    

@@ -130,6 +130,50 @@ def print_rangoli(size):
         space = '-' * int((width - len(result)) / 2)
         print(space + result + space)
     
+def solve(s):
+    s = s.split(' ')
+    f = []
+    for w in s:
+        f.append(w.capitalize())
+    return ' '.join(f)
+
+def minion_game1(string):
+    #Stuart
+    n = len(string)
+    comb = ((n)*(n+1))/2
+    kevinPoints = 0
+    stuartPoints = 0
+    kevinPoints = sum([len(string[i:]) for i in range(len(string)) if string[i] in "AEIOU"])
+    stuartPoints = comb - kevinPoints
+
+    if stuartPoints == kevinPoints:
+        print("Draw")
+    elif stuartPoints > kevinPoints:
+        print("Stuart", int(stuartPoints) )
+    else:
+        print("Kevin", int(kevinPoints))
+
+def minion_game(string):
+    s=len(string)
+    vowel = 0
+    consonant = 0
+     
+    for i in range(s):
+        if string[i] in 'AEIOU':
+           vowel+=(s-i)
+        else:
+           consonant+=(s-i)
+                
+    if vowel < consonant:
+        print('Stuart ', consonant)
+    elif vowel > consonant:
+        print('Kevin ', vowel)
+    else:
+        print('Draw')
 
 if __name__ == '__main__':
-    print_rangoli(10)
+    contador = 1
+    for tick in range(10):
+        resultado = contador + 1
+        print(resultado)
+        contador = resultado

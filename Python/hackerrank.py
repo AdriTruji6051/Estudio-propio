@@ -90,6 +90,16 @@ import textwrap
 def wrap(string, max_width):
     return textwrap.fill(string, max_width)
 
+from itertools import product
+def intertoolsImplem():
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    c = list(product(a,b))
+    d = ''
+    for t in c:
+        d += str(t) + ' '
+    print(d)
+    
 def designerDoor():
     n, m = map(int,input().split())
     for i in range(n//2):
@@ -129,7 +139,47 @@ def print_rangoli(size):
         result = '-'.join(result)
         space = '-' * int((width - len(result)) / 2)
         print(space + result + space)
-    
 
-if __name__ == '__main__':
-    print_rangoli(10)
+def minion_game(string):
+    kevinVowel = 0
+    stuartConsonant = 0
+    stringLen = len(string)
+    for i in range(len(string)):
+        if string[i] in 'AEIOU':
+            kevinVowel += stringLen - i
+        else:
+            stuartConsonant += stringLen - i
+    
+    if stuartConsonant > kevinVowel:
+        print(f'Stuart {stuartConsonant}')
+    elif stuartConsonant < kevinVowel:
+        print(f'Kevin {kevinVowel}')
+    else:
+        print('Draw')
+
+def merge_the_tools(string, k):
+    results = []
+    indexing = 0
+    for i in range(k, len(string) + k, k):
+        chars = string[indexing:i]
+        isInChars = set()
+        newChars = []
+        
+        for c in chars:
+            if c not in isInChars:
+                newChars.append(c)
+                isInChars.update(c)
+            
+        results.append(''.join(newChars))
+        indexing += k     
+    
+    for r in results:
+        print(r)
+
+from itertools import permutations
+if __name__ == '__main__':   
+    s, k = input().split()
+    r = list(permutations(list(s),int(k)))
+    r.sort()
+    for p in r:
+        print(''.join(list(p)))

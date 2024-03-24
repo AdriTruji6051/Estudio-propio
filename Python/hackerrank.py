@@ -176,14 +176,7 @@ def merge_the_tools(string, k):
     for r in results:
         print(r)
 
-from itertools import permutations
-if __name__ == '__main__':   
-    s, k = input().split()
-    r = list(permutations(list(s),int(k)))
-    r.sort()
-    for p in r:
-        print(''.join(list(p)))
-    
+from itertools import permutations 
 def solve(s):
     s = s.split(' ')
     f = []
@@ -226,8 +219,4 @@ def minion_game(string):
         print('Draw')
 
 if __name__ == '__main__':
-    contador = 1
-    for tick in range(10):
-        resultado = contador + 1
-        print(resultado)
-        contador = resultado
+    print("hola")

@@ -218,5 +218,55 @@ def minion_game(string):
     else:
         print('Draw')
 
+from collections import Counter 
+def raghuShoeStore():
+    x = int(input())
+    n = list(input().split())
+    cl = int(input())
+    nInventory = Counter(n)    
+    ganancias = 0
+    for _ in range(cl):
+        info = input().split()
+        if nInventory[info[0]] > 0:
+            ganancias += int(info[1])
+            nInventory[info[0]] -= 1       
+    print(ganancias)
+
+from collections import defaultdict
+def defaultDictHacker():
+    n, m = input().split()
+    dictionary = defaultdict(list)
+    answers = []
+    for i in range(int(n)):
+        dictionary[input()].append(str(i + 1))
+    
+    for _ in range(int(m)):
+        i = input()
+        if dictionary.get(i) != None:
+            answers.append(' '.join(dictionary[i]))
+        else:
+            answers.append('-1')
+    
+    for ans in answers:
+        print(ans)
+        
+def symetyricDifference():
+    m = int(input())
+    M = set(map(int, input().split()))
+    n = int(input())
+    N = set(map(int, input().split()))
+    
+    a = N.difference(M)
+    b = M.difference(N)
+    R = a.union(b)
+    for c in sorted(R):
+        print(c)
+        
+import calendar 
+def calendarModule():
+    month, day, year = list(map(int,input().split()))
+    ans = calendar.weekday(year, month, day)
+    print((calendar.day_name[ans]).upper())
+
 if __name__ == '__main__':
-    print("hola")
+    calendarModule()

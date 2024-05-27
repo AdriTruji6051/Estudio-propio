@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo de mensaje al pasar el mouse</title>
+<style>
+    /* Estilos opcionales para el mensaje */
+    .mensaje {
+        position: absolute;
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Elemento HTML con mensaje vinculado -->
+<div id="elemento" title="¡Hola! Soy un mensaje al pasar el mouse por encima.">Pasa el mouse sobre mí</div>
+
+<!-- Script para mostrar el mensaje al pasar el mouse -->
+<script>
+    document.getElementById('elemento').addEventListener('mouseover', function() {
+        var mensaje = this.getAttribute('title');
+        var mensajeDiv = document.createElement('div');
+        mensajeDiv.textContent = mensaje;
+        mensajeDiv.classList.add('mensaje');
+        this.appendChild(mensajeDiv);
+    });
+
+    document.getElementById('elemento').addEventListener('mouseout', function() {
+        var mensajeDiv = this.querySelector('.mensaje');
+        if (mensajeDiv) {
+            mensajeDiv.parentNode.removeChild(mensajeDiv);
+        }
+    });
+</script>
+
+</body>
+</html>

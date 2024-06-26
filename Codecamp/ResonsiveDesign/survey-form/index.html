@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Form></Form></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form id="survey-form" action="">
+        <label for="name" id="name-label">Name: <input type="text" id="name" placeholder="Antonio Perez" required></label>
+        <label for="email" id="email-label">Email: <input type="email" id="email" placeholder="antonio@gmial.com" required></label>
+        <label for="number" id="number-label">Age: <input type="number" id="number" min="18" max="120" placeholder="23" required></label>
+        <select name="dropdown" id="dropdown">
+            <option value="1" name="animal">Dogs</option>
+            <option value="2" name="animal">Cats</option>
+        </select>
+        <label for="lol">LOL <input type="radio" name="meme" id="lol" value="lol"></label>
+        <label for="xd">XD <input type="radio" name="meme" id="xd" value="xd"></label>
+        
+        <input type="checkbox" name="major" id="amlo" value="amlo">
+        <input type="checkbox" name="major" id="enrique" value="enrique">
+        <input type="checkbox" name="major" id="calderon" value="calderon">
+        <textarea id="coments" placeholder="hello, i like amlo"></textarea>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
